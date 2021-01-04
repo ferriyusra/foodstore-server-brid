@@ -1,19 +1,28 @@
-// (1) import router dari express
+//  import router dari express
 const router = require('express').Router()
 
 const multer = require('multer')
 const os = require('os')
 
-// (2) import product controller
+//  import product controller
 const productController = require('./controller')
 
 // route endpoint dengan method get untuk daftar product
 router.get('/products', productController.index)
 
-// (3) pasangkan route endpoint dengan method `store` untuk tambah data
-router.post('/products', multer({ dest: os.tmpdir() }).single('image'), productController.store)
+// route endpoint dengan method post untuk tambah data
+router.post('/products', multer({
+    dest: os.tmpdir()
+}).single('image'), productController.store)
 
+// route endpoint dengan method put untuk update data
+router.put('/products/:id', multer({
+    dest:
+        os.tmpdir()
+}).single('image'), productController.update);
 
+// route endpoint dengan method delete untuk delete data
+router.delete('/products/:id', productController.destroy)
 
-// (4) export router 
+// export router 
 module.exports = router;
