@@ -4,8 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// (1) import file product router
+// import file product router
 const productRouter = require('./app/product/router')
+
+// import file categories router
+const categoryRouter = require('./app/categories/router')
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -22,8 +25,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// (2) gunakan product router
+// gunakan product router
 app.use('/api', productRouter);
+
+// gunakan categories router
+app.use('/api', categoryRouter)
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
