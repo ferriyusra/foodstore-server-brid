@@ -20,6 +20,13 @@ const productSchema = Schema({
         default: 0
     },
     image_url: String,
+
+    // ------- relation dengan Category ----//
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category' //nama collection yg ingin direalasikan
+    }
+
 }, { timestamps: true })
 
 module.exports = model('Product', productSchema)

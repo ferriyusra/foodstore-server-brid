@@ -4,8 +4,11 @@ const path = require('path')
 // (1) import model `Product`
 const Product = require('./model')
 
+// import model category
+const Category = require('../categories/model');
+
 // import config
-const config = require('../config')
+const config = require('../config');
 
 
 // buat function index untuk endpoint daftar product
@@ -54,6 +57,18 @@ async function store(req, res, next) {
     try {
         // > tangkap data form yang dikirimkan oleh client sebagai variabel `payload`
         let payload = req.body
+
+        // apakah ada categori yg dimasukkan
+        if (payload.category) {
+            let category = await Category.findOne({ name: { $regex: payload.category, $options: 'i' } })
+
+            if (category) {
+                payload = { ...payload, category: category._id }
+            } else {
+                delete payload.category
+            }
+
+        }
 
         // cek apakah yg diupload file
         if (req.file) {
@@ -148,6 +163,18 @@ async function update(req, res, next) {
     try {
         // > tangkap data form yang dikirimkan oleh client sebagai variabel `payload`
         let payload = req.body
+
+        // apakah ada categori yg dimasukkan
+        if (payload.category) {
+            let category = await Category.findOne({ name: { $regex: payload.category, $options: 'i' } })
+
+            if (category) {
+                payload = { ...payload, category: category._id }
+            } else {
+                delete payload.category
+            }
+
+        }
 
         // cek apakah yg diupload file
         if (req.file) {
