@@ -10,6 +10,9 @@ const productRouter = require('./app/product/router')
 // import file categories router
 const categoryRouter = require('./app/categories/router')
 
+// import file tags router
+const tagRouter = require('./app/tag/router')
+
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -30,6 +33,9 @@ app.use('/api', productRouter);
 
 // gunakan categories router
 app.use('/api', categoryRouter)
+
+// gunakan tag router
+app.use('/api', tagRouter)
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
