@@ -24,8 +24,16 @@ const productSchema = Schema({
     // ------- relation dengan Category ----//
     category: {
         type: Schema.Types.ObjectId,
-        ref: 'Category' //nama collection yg ingin direalasikan
-    }
+        ref: 'Category' //nama field yg ingin direalasikan
+    },
+
+    // ------- relation dengan Tags ----//
+    tags: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Tag' //nama field yg ingin direalasikan
+        }
+    ]
 
 }, { timestamps: true })
 

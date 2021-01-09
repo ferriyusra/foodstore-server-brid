@@ -4,8 +4,11 @@ const path = require('path')
 // (1) import model `Product`
 const Product = require('./model')
 
-// import model category
+// import model category untuk relasi one to one
 const Category = require('../categories/model');
+
+// import model tag untuk relasi one to many
+const Tag = require('../tag/model')
 
 // import config
 const config = require('../config');
@@ -16,12 +19,14 @@ async function index(req, res, next) {
     try {
 
         // pagination
-        let { limit = 5, skip = 0 } = req.query
+        let { limit = 10, skip = 0 } = req.query
 
         let products =
             await Product.find()
                 .limit(parseInt(limit))
                 .skip(parseInt(skip))
+                .populate('category')
+                .populate('tags')
 
         // kembalikan data products
         return res.json(products)
@@ -66,6 +71,21 @@ async function store(req, res, next) {
                 payload = { ...payload, category: category._id }
             } else {
                 delete payload.category
+            }
+
+        }
+
+        // apakah ada tag yg dimasukkan
+        if (payload.tags && payload.tags.length) {
+
+            let tags = await Tag.find({ name: { $in: payload.tags } })
+
+            // (1) cek apakah tags membuahkan hasil
+            if (tags.length) {
+
+                // (2) jika ada, maka kita ambil `_id` untuk masing-masing `Tag` dan gabungkan dengan payload
+                payload = { ...payload, tags: tags.map(tag => tag._id) }
+
             }
 
         }
@@ -172,6 +192,21 @@ async function update(req, res, next) {
                 payload = { ...payload, category: category._id }
             } else {
                 delete payload.category
+            }
+
+        }
+
+        // apakah ada tag yg dimasukkan
+        if (payload.tags && payload.tags.length) {
+
+            let tags = await Tag.find({ name: { $in: payload.tags } })
+
+            // (1) cek apakah tags membuahkan hasil
+            if (tags.length) {
+
+                // (2) jika ada, maka kita ambil `_id` untuk masing-masing `Tag` dan gabungkan dengan payload
+                payload = { ...payload, tags: tags.map(tag => tag._id) }
+
             }
 
         }
