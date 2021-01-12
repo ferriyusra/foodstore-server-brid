@@ -19,10 +19,46 @@ async function index(req, res, next) {
     try {
 
         // pagination
-        let { limit = 10, skip = 0 } = req.query
+        let { limit = 10, skip = 0, q = '', category = '', tags = [] } = req.query
+
+        // variabel criteria untuk kita gunakan saat melakukan query ke MongoDB
+        let criteria = {}
+
+        // lakukan pengecekkan apakah variabel q memiliki nilai teks yang artinya client 
+        // mengirimkan query string q
+        if (q.length) {
+            // jika variabel q memiliki nilai, kita gabungkan dengan variabel criteria
+
+            // --- gabungkan dengan criteria --- //
+            criteria = {
+                ...criteria,
+                name: { $regex: `${q}`, $options: 'i' }
+            }
+        }
+
+
+        // melakukan pengecekkan apakah variabel category memiliki nilai
+        if (category.length) {
+            // mencari category tersebut di collection categories
+            category = await Category.findOne({ name: { $regex: `${category}`, $options: 'i' } })
+            // jika kategori ditemukan
+            if (category) {
+                criteria = { ...criteria, category: category._id }
+            }
+        }
+
+        //  cek apakah tags memiliki is
+        if (tags.length) {
+            // jika Array tags memiliki isi, maka kita gunakan untuk mencari ke collection Tag
+            tags = Tag.findOne({ name: { $in: tags } })
+            // gabungkan ke dalam criteria untuk mencari Product, untuk masing-masing tag tadi 
+            // kita ambil _id nya menggunakan fungsi map
+            citeria = { ...criteria, tags: { $in: tags.map(tag => tag) } }
+        }
+
 
         let products =
-            await Product.find()
+            await Product.find(criteria)
                 .limit(parseInt(limit))
                 .skip(parseInt(skip))
                 .populate('category')
@@ -348,3 +384,4 @@ module.exports = {
     update,
     destroy
 }
+
