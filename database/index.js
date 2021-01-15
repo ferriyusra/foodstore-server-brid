@@ -8,7 +8,8 @@ const { dbHost, dbName, dbPort, dbUser, dbPass } = require('../app/config');
 mongoose.connect(`mongodb://${dbUser}:${dbPass}@${dbHost}:${dbPort}/${dbName}?authSource=admin`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useCreateIndex: true
 });
 
 // (4) simpan koneksi dalam constant `db`

@@ -47,7 +47,7 @@ async function index(req, res, next) {
             }
         }
 
-        //  cek apakah tags memiliki is
+        //  cek apakah tags memiliki isi
         if (tags.length) {
             // jika Array tags memiliki isi, maka kita gunakan untuk mencari ke collection Tag
             tags = Tag.findOne({ name: { $in: tags } })
