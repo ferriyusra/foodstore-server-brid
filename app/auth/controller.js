@@ -68,7 +68,7 @@ async function login(req, res, next) {
         if (!user) return res.json({ error: 1, message: 'email or password incorrect' })
 
         // (1) buat JSON Web Token
-        let signed = jwt.signed(user, config.secretKey)
+        let signed = jwt.sign(user, config.secretKey)
 
         // (2) simpan token tersebut ke user terkait
         await User.findOneAndUpdate({ _id: user._id }, { $push: { token: signed } }, { new: true })
