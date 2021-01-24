@@ -22,7 +22,7 @@ async function index(req, res, next) {
     try {
 
         // pagination
-        let { limit = 2, skip = 0, q = '', category = '', tags = [] } = req.query
+        let { limit = 10, skip = 0, q = '', category = '', tags = [] } = req.query
 
         // variabel criteria untuk kita gunakan saat melakukan query ke MongoDB
         let criteria = {}

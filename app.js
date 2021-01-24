@@ -19,6 +19,9 @@ const authRouter = require('./app/auth/router')
 // import file wilayah provinsi router
 const wilayahRouter = require('./app/wilayah/router')
 
+// import file address router
+const deliveryRouter = require('./app/delivery-address/router')
+
 // import file middleware decodeToken
 const { decodeToken } = require('./app/auth/midlleware')
 
@@ -54,6 +57,9 @@ app.use('/api', tagRouter)
 
 // gunakan wilayah router
 app.use('/api', wilayahRouter);
+
+// gunakan delivery-address router
+app.use('/api', deliveryRouter);
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
