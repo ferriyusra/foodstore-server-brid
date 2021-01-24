@@ -22,7 +22,7 @@ async function index(req, res, next) {
     try {
 
         // pagination
-        let { limit = 10, skip = 0, q = '', category = '', tags = [] } = req.query
+        let { limit = 2, skip = 0, q = '', category = '', tags = [] } = req.query
 
         // variabel criteria untuk kita gunakan saat melakukan query ke MongoDB
         let criteria = {}
@@ -39,6 +39,7 @@ async function index(req, res, next) {
             }
         }
 
+        let count = await Product.find(criteria).countDocuments(); // <--- perubahan 1
 
         // melakukan pengecekkan apakah variabel category memiliki nilai
         if (category.length) {
@@ -68,7 +69,7 @@ async function index(req, res, next) {
                 .populate('tags')
 
         // kembalikan data products
-        return res.json(products)
+        return res.json({ data: products, count }); // <--- perubahan 2
 
         //////////////////////////////////////
 
