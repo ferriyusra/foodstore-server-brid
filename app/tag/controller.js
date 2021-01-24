@@ -1,8 +1,23 @@
 // import model
 const Tag = require('./model')
 
+// import policyfor casl
+const { policyFor } = require('../policy')
+
 async function store(req, res, next) {
     try {
+
+        //--- cek policy ---/
+        let policy = policyFor(req.user)
+
+        if (!policy.can('create', 'Tag')) {
+            return res.json({
+                error: 1,
+                message: 'Anda tidak memiliki akses untuk membuat Tag'
+            })
+        }
+        //-----------------//
+
         // dapatkan data dari request yang dikirimkan client
         let payload = req.body
 
@@ -33,6 +48,18 @@ async function store(req, res, next) {
 
 async function update(req, res, next) {
     try {
+
+        //--- cek policy ---/
+        let policy = policyFor(req.user)
+
+        if (!policy.can('update', 'Tag')) {
+            return res.json({
+                error: 1,
+                message: 'Anda tidak memiliki akses untuk mengupdate Tag'
+            })
+        }
+        //-----------------//
+
         // dapatkan data dari request yang dikirimkan client
         let payload = req.body
 
@@ -59,6 +86,18 @@ async function update(req, res, next) {
 
 async function destroy(req, res, next) {
     try {
+
+        //--- cek policy ---/
+        let policy = policyFor(req.user)
+
+        if (!policy.can('delete', 'Tag')) {
+            return res.json({
+                error: 1,
+                message: 'Anda tidak memiliki akses untuk menghapus Tag'
+            })
+        }
+        //-----------------//
+
         let tag = await Tag.findOneAndDelete({ _id: req.params.id })
 
         return res.json(tag)

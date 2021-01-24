@@ -13,6 +13,9 @@ const Tag = require('../tag/model')
 // import config
 const config = require('../config');
 
+// import policyfor casl
+const { policyFor } = require('../policy')
+
 
 // buat function index untuk endpoint daftar product
 async function index(req, res, next) {
@@ -96,7 +99,19 @@ async function index(req, res, next) {
 async function store(req, res, next) {
 
     try {
-        // > tangkap data form yang dikirimkan oleh client sebagai variabel `payload`
+
+        //--- cek policy ---/
+        let policy = policyFor(req.user)
+
+        if (!policy.can('create', 'Product')) {
+            return res.json({
+                error: 1,
+                message: 'Anda tidak memiliki akses untuk membuat produk'
+            })
+        }
+        //-----------------//
+
+        // tangkap data form yang dikirimkan oleh client sebagai variabel `payload`
         let payload = req.body
 
         // apakah ada categori yg dimasukkan
@@ -217,6 +232,18 @@ async function store(req, res, next) {
 async function update(req, res, next) {
 
     try {
+
+        //--- cek policy ---/
+        let policy = policyFor(req.user)
+
+        if (!policy.can('update', 'Product')) {
+            return res.json({
+                error: 1,
+                message: 'Anda tidak memiliki akses untuk mengupdate produk'
+            })
+        }
+        //-----------------//
+
         // > tangkap data form yang dikirimkan oleh client sebagai variabel `payload`
         let payload = req.body
 
@@ -341,6 +368,18 @@ async function update(req, res, next) {
 
 async function destroy(req, res, next) {
     try {
+
+        //--- cek policy ---/
+        let policy = policyFor(req.user)
+
+        if (!policy.can('delete', 'Product')) {
+            return res.json({
+                error: 1,
+                message: 'Anda tidak memiliki akses untuk menghapus produk'
+            })
+        }
+        //-----------------//
+
         let product = await Product.findOneAndDelete({ _id: req.params.id })
 
         // cek apakah data produk memiliki file gambar terkait dan hapus gambar juga jika ada
