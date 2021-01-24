@@ -5,6 +5,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
+const { getToken } = require('../utils/get-token')
 
 async function register(req, res, next) {
     try {
@@ -98,9 +99,34 @@ function me(req, res, next) {
     return req.json(req.user)
 }
 
+async function logout(req, res, next) {
+    // dapatkan token dari `request`
+    let token = getToken(req)
+
+    // hapus token dari user
+    let user = await User.findOneAndUpdate({ token: { $in: [token] } },
+        { $pull: { token } }, { useFindAndModify: false })
+
+    // --- cek user atau token ---//
+    if (!user || !token) {
+        return res.json({
+            error: 1,
+            message: `User not found`
+        })
+    }
+
+    // --- logout berhasil ---//
+    return res.json({
+        error: 0,
+        message: 'Logout successfully'
+    })
+
+}
+
 module.exports = {
     register,
     localStrategy,
     login,
-    me
+    me,
+    logout
 }

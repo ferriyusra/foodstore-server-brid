@@ -18,5 +18,7 @@ router.post('/login', multer().none(), controller.login);
 
 router.get('/me ', controller.me);
 
+router.post('/logout ', controller.logout);
+
 // export router
 module.exports = router
