@@ -84,8 +84,23 @@ async function login(req, res, next) {
 }
 
 
+function me(req, res, next) {
+
+    // cek apakah req.user memiliki nilai pada token ?
+
+    if (!req.user) {
+        return res.json({
+            error: 1,
+            message: `You're not login or token expired`
+        })
+    }
+
+    return req.json(req.user)
+}
+
 module.exports = {
     register,
     localStrategy,
-    login
+    login,
+    me
 }

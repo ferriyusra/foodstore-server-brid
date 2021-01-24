@@ -17,7 +17,7 @@ const tagRouter = require('./app/tag/router')
 const authRouter = require('./app/auth/router')
 
 // import file middleware decodeToken
-const { decodeToken } = require('./app/utils/get-token')
+const { decodeToken } = require('./app/auth/midlleware')
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
