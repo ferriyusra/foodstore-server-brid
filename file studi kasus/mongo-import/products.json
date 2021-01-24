@@ -1,0 +1,438 @@
+[{
+  "_id": {
+    "$oid": "5f085e29df3e9c52c34d5d2d"
+  },
+  "price": 12000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083830df3e9c52c34d5d26"
+    }
+  ],
+  "name": "Toast",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "fdb5db14d9890e3b2a43a5e5b78b649f.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f085ec7df3e9c52c34d5d2e"
+  },
+  "price": 42000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083830df3e9c52c34d5d26"
+    }
+  ],
+  "name": "Bread Bundle",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "6e61f0ff0e45f62579de379cb0d17fa4.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f085ee3df3e9c52c34d5d2f"
+  },
+  "price": 14000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083830df3e9c52c34d5d26"
+    }
+  ],
+  "name": "Pita Bread",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "ce2093cdc1c70a99de0bebfee3e10156.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f085efadf3e9c52c34d5d30"
+  },
+  "price": 11000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083830df3e9c52c34d5d26"
+    }
+  ],
+  "name": "Sour Dough",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "7955c7687a3c4be717c5a719106de42f.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f085f1edf3e9c52c34d5d31"
+  },
+  "price": 18000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083827df3e9c52c34d5d24"
+    }
+  ],
+  "name": "Burger",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "5448612f170548085b75f3c45cd088a9.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f085f47df3e9c52c34d5d32"
+  },
+  "price": 33000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083827df3e9c52c34d5d24"
+    }
+  ],
+  "name": "Tripple Burger",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "fb92e7fbb4f8061e278322e0e6a2c20c.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f085f82df3e9c52c34d5d33"
+  },
+  "price": 51000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083827df3e9c52c34d5d24"
+    }
+  ],
+  "name": "Burger Package",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "a0b7ca897ed68680eaa11633562a9f61.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d3d6a9c6cd7146ea8029"
+  },
+  "price": 14000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f0837cedf3e9c52c34d5d20"
+    },
+    {
+      "$oid": "5f08381bdf3e9c52c34d5d22"
+    }
+  ],
+  "name": "Hot Americano",
+  "category": {
+    "$oid": "5f083551e0495436721eeb66"
+  },
+  "image_url": "0b8d43e68df16a6dc42478dc574243eb.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d43aa9c6cd7146ea802b"
+  },
+  "price": 13000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f0837cedf3e9c52c34d5d20"
+    },
+    {
+      "$oid": "5f08381bdf3e9c52c34d5d22"
+    }
+  ],
+  "name": "Dobleshooet Espresso",
+  "category": {
+    "$oid": "5f083551e0495436721eeb66"
+  },
+  "image_url": "84b0d57bd7a96c3f25ce767c874066af.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d443a9c6cd7146ea802c"
+  },
+  "price": 14000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f0837cedf3e9c52c34d5d20"
+    },
+    {
+      "$oid": "5f08381fdf3e9c52c34d5d23"
+    }
+  ],
+  "name": "Cappucino Ice",
+  "category": {
+    "$oid": "5f083551e0495436721eeb66"
+  },
+  "image_url": "4415255fa24c94843c85e18feb09ac8f.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d45fa9c6cd7146ea802d"
+  },
+  "price": 16000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f0837cedf3e9c52c34d5d20"
+    },
+    {
+      "$oid": "5f08381bdf3e9c52c34d5d22"
+    }
+  ],
+  "name": "Kopi Gayo",
+  "category": {
+    "$oid": "5f083551e0495436721eeb66"
+  },
+  "image_url": "4bed8fca4c3e291a6a64bec3488455e6.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d484a9c6cd7146ea802e"
+  },
+  "price": 9000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f08384fdf3e9c52c34d5d2a"
+    }
+  ],
+  "name": "Strawberry Muffin",
+  "category": {
+    "$oid": "5f08355ee0495436721eeb68"
+  },
+  "image_url": "b52e518897dde3f99ac24c55278bae7c.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d4b2a9c6cd7146ea802f"
+  },
+  "price": 9000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083843df3e9c52c34d5d29"
+    }
+  ],
+  "name": "Choco Muffin",
+  "category": {
+    "$oid": "5f08355ee0495436721eeb68"
+  },
+  "image_url": "3f62bd55492b7d4024997f6bc0af5540.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d4cba9c6cd7146ea8030"
+  },
+  "price": 11000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083843df3e9c52c34d5d29"
+    },
+    {
+      "$oid": "5f08384fdf3e9c52c34d5d2a"
+    }
+  ],
+  "name": "Macarone",
+  "category": {
+    "$oid": "5f08355ee0495436721eeb68"
+  },
+  "image_url": "c8e397ccdb72203efaa24fcbd9c96e5b.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d4f5a9c6cd7146ea8031"
+  },
+  "price": 11000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083843df3e9c52c34d5d29"
+    }
+  ],
+  "name": "Roti Segitiga",
+  "category": {
+    "$oid": "5f08355ee0495436721eeb68"
+  },
+  "image_url": "722e3edecef0f8f22c4122221b1c284e.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d51aa9c6cd7146ea8032"
+  },
+  "price": 31000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f08382cdf3e9c52c34d5d25"
+    }
+  ],
+  "name": "Pizza",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "67a919b6e1841f7370d22098b4152b1d.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d52ca9c6cd7146ea8033"
+  },
+  "price": 37000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f08382cdf3e9c52c34d5d25"
+    }
+  ],
+  "name": "Pizza Meat",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "7b1b27f581b4fc89e6b67a30bd9b5609.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d53ba9c6cd7146ea8034"
+  },
+  "price": 27000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f08382cdf3e9c52c34d5d25"
+    }
+  ],
+  "name": "Pizza Tomato",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "643802c1ba5991d6bc2c0591efaedac9.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d54ea9c6cd7146ea8035"
+  },
+  "price": 12000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f08382cdf3e9c52c34d5d25"
+    }
+  ],
+  "name": "Pizza Slice",
+  "category": {
+    "$oid": "5f08353be0495436721eeb65"
+  },
+  "image_url": "0bccaee6b14415a0c557722506abf543.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d571a9c6cd7146ea8036"
+  },
+  "price": 14000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083839df3e9c52c34d5d27"
+    }
+  ],
+  "name": "French Fries",
+  "category": {
+    "$oid": "5f083558e0495436721eeb67"
+  },
+  "image_url": "ba3e8ad940272db07b70d0cbc5a22bef.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d596a9c6cd7146ea8037"
+  },
+  "price": 12000,
+  "discount": 0,
+  "tags": [
+    {
+      "$oid": "5f083830df3e9c52c34d5d26"
+    }
+  ],
+  "name": "Croissant",
+  "category": {
+    "$oid": "5f083558e0495436721eeb67"
+  },
+  "image_url": "7ca3066feb31d90a350c1c4a8bdd510b.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d5aba9c6cd7146ea8038"
+  },
+  "price": 15000,
+  "discount": 0,
+  "tags": [],
+  "name": "Pop Corn",
+  "category": {
+    "$oid": "5f083558e0495436721eeb67"
+  },
+  "image_url": "4f0061b8674b68439849bd26f31d0e6f.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d5b9a9c6cd7146ea8039"
+  },
+  "price": 11000,
+  "discount": 0,
+  "tags": [],
+  "name": "Chips",
+  "category": {
+    "$oid": "5f083558e0495436721eeb67"
+  },
+  "image_url": "b20ecb0cfd685ec3b8eba6a090d2394f.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d5d0a9c6cd7146ea803a"
+  },
+  "price": 17000,
+  "discount": 0,
+  "tags": [],
+  "name": "Cheese Fruit",
+  "category": {
+    "$oid": "5f083558e0495436721eeb67"
+  },
+  "image_url": "782e46f83fbe1e1b054c9cf86d09213f.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d5e7a9c6cd7146ea803b"
+  },
+  "price": 6000,
+  "discount": 0,
+  "tags": [],
+  "name": "Hot Tea",
+  "category": {
+    "$oid": "5f083551e0495436721eeb66"
+  },
+  "image_url": "291ebc245b16b964909b8bce7ee48161.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08d5f6a9c6cd7146ea803c"
+  },
+  "price": 8000,
+  "discount": 0,
+  "tags": [],
+  "name": "Ice Tea",
+  "category": {
+    "$oid": "5f083551e0495436721eeb66"
+  },
+  "image_url": "8dad3a4c4395dc9203efe40160ddb7fd.png",
+  "__v": 0
+}]

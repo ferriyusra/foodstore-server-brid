@@ -41,6 +41,7 @@ async function index(req, res, next) {
 
         let count = await Product.find(criteria).countDocuments(); // <--- perubahan 1
 
+
         // melakukan pengecekkan apakah variabel category memiliki nilai
         if (category.length) {
             // mencari category tersebut di collection categories

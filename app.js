@@ -16,6 +16,9 @@ const tagRouter = require('./app/tag/router')
 // import file auth router
 const authRouter = require('./app/auth/router')
 
+// import file wilayah provinsi router
+const wilayahRouter = require('./app/wilayah/router')
+
 // import file middleware decodeToken
 const { decodeToken } = require('./app/auth/midlleware')
 
@@ -37,6 +40,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // gunakan middleware decodeToken
 app.use(decodeToken());
 
+// gunakan auth router
+app.use('/auth', authRouter);
+
 // gunakan product router
 app.use('/api', productRouter);
 
@@ -46,8 +52,8 @@ app.use('/api', categoryRouter)
 // gunakan tag router
 app.use('/api', tagRouter)
 
-// gunakan auth router
-app.use('/auth', authRouter);
+// gunakan wilayah router
+app.use('/api', wilayahRouter);
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);

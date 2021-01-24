@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "5f0837cedf3e9c52c34d5d20"
+  },
+  "name": "coffee",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083816df3e9c52c34d5d21"
+  },
+  "name": "tea",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08381bdf3e9c52c34d5d22"
+  },
+  "name": "hot",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08381fdf3e9c52c34d5d23"
+  },
+  "name": "cold",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083827df3e9c52c34d5d24"
+  },
+  "name": "burger",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08382cdf3e9c52c34d5d25"
+  },
+  "name": "pizza",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083830df3e9c52c34d5d26"
+  },
+  "name": "bread",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083839df3e9c52c34d5d27"
+  },
+  "name": "fried",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08383edf3e9c52c34d5d28"
+  },
+  "name": "cheese",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083843df3e9c52c34d5d29"
+  },
+  "name": "chocolate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f08384fdf3e9c52c34d5d2a"
+  },
+  "name": "strawberry",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083857df3e9c52c34d5d2b"
+  },
+  "name": "muffin",
+  "__v": 0
+}]
