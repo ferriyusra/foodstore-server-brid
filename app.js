@@ -16,6 +16,9 @@ const tagRouter = require('./app/tag/router')
 // import file auth router
 const authRouter = require('./app/auth/router')
 
+// import file middleware decodeToken
+const { decodeToken } = require('./app/utils/get-token')
+
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -30,6 +33,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// gunakan middleware decodeToken
+app.use(decodeToken());
 
 // gunakan product router
 app.use('/api', productRouter);
