@@ -56,10 +56,8 @@ async function update(req, res, next) {
         let { _id, ...payload } = req.body
 
         // (1) cek policy
-        let address = await DeliveryAddress.findOne({
-            _id:
-                id
-        });
+        let address = await DeliveryAddress.findOne({ _id: id });
+
         let subjectAddress = subject('DeliveryAddress',
             { ...address, user_id: address.user });
 
@@ -72,10 +70,8 @@ async function update(req, res, next) {
         // (1) end
 
         // (1) update ke MongoDB
-        address = await DeliveryAddress.findOneAndUpdate({ _id: id }, payload, {
-            new:
-                true
-        });
+        address = await DeliveryAddress.findOneAndUpdate({ _id: id }, payload, { new: true });
+
         // (2) respon dengan data `address`
         return res.json(address);
 
