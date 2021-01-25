@@ -22,6 +22,9 @@ const wilayahRouter = require('./app/wilayah/router')
 // import file address router
 const deliveryRouter = require('./app/delivery-address/router')
 
+// import file cart router
+const cartRouter = require('./app/cart/router')
+
 // import file middleware decodeToken
 const { decodeToken } = require('./app/auth/midlleware')
 
@@ -60,6 +63,9 @@ app.use('/api', wilayahRouter);
 
 // gunakan delivery-address router
 app.use('/api', deliveryRouter);
+
+// gunakan cart router
+app.use('/api', cartRouter);
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
