@@ -25,6 +25,9 @@ const deliveryRouter = require('./app/delivery-address/router')
 // import file cart router
 const cartRouter = require('./app/cart/router')
 
+// import file orders router
+const orderRouter = require('./app/order/router')
+
 // import file middleware decodeToken
 const { decodeToken } = require('./app/auth/midlleware')
 
@@ -66,6 +69,9 @@ app.use('/api', deliveryRouter);
 
 // gunakan cart router
 app.use('/api', cartRouter);
+
+// gunakan order router
+app.use('/api', orderRouter);
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
