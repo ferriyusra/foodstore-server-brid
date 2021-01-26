@@ -1,10 +1,9 @@
-const User = require('../user/model')
-const config = require('../config')
-
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
+const User = require('../user/model')
+const config = require('../config')
 const { getToken } = require('../utils/get-token')
 
 async function register(req, res, next) {
@@ -64,22 +63,22 @@ async function localStrategy(email, password, done) {
 async function login(req, res, next) {
     passport.authenticate('local', async function (err, user) {
 
-        if (err) return next(err)
+        if (err) return next(err);
 
         if (!user) return res.json({ error: 1, message: 'email or password incorrect' })
 
         // (1) buat JSON Web Token
-        let signed = jwt.sign(user, config.secretKey)
+        let signed = jwt.sign(user, config.secretKey);
 
         // (2) simpan token tersebut ke user terkait
-        await User.findOneAndUpdate({ _id: user._id }, { $push: { token: signed } }, { new: true })
+        await User.findOneAndUpdate({ _id: user._id }, { $push: { token: signed } }, { new: true });
 
         // (3) response ke _client_ 
         return res.json({
             message: 'logged in successfully',
             user: user,
             token: signed
-        })
+        });
 
     })(req, res, next);
 }
@@ -96,7 +95,7 @@ function me(req, res, next) {
         })
     }
 
-    return req.json(req.user)
+    return res.json(req.user)
 }
 
 async function logout(req, res, next) {
