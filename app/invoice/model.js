@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { model, schema } = mongoose
+const { model, Schema } = mongoose
 
 const invoiceSchema = Schema({
     sub_total: {
