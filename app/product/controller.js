@@ -39,7 +39,6 @@ async function index(req, res, next) {
             }
         }
 
-        let count = await Product.find(criteria).countDocuments(); // <--- perubahan 1
 
 
         // melakukan pengecekkan apakah variabel category memiliki nilai
@@ -55,12 +54,13 @@ async function index(req, res, next) {
         //  cek apakah tags memiliki isi
         if (tags.length) {
             // jika Array tags memiliki isi, maka kita gunakan untuk mencari ke collection Tag
-            tags = Tag.findOne({ name: { $in: tags } })
+            tags = await Tag.find({ name: { $in: tags } })
             // gabungkan ke dalam criteria untuk mencari Product, untuk masing-masing tag tadi 
             // kita ambil _id nya menggunakan fungsi map
-            citeria = { ...criteria, tags: { $in: tags.map(tag => tag) } }
+            criteria = { ...criteria, tags: { $in: tags.map(tag => tag._id) } }
         }
 
+        let count = await Product.find(criteria).countDocuments(); // <--- perubahan 1
 
         let products =
             await Product.find(criteria)

@@ -1,0 +1,1 @@
+DEBUG=foodstore-server-brid:* nodemon npm start

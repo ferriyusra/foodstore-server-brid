@@ -4,7 +4,7 @@ const { AbilityBuilder, Ability } = require('@casl/ability')
 // buat object policy
 const policies = {
 
-    guset(user, { can }) {
+    guest(user, { can }) {
         can('read', 'Product')
     },
 
@@ -49,22 +49,24 @@ const policies = {
     },
 
     admin(user, { can }) {
-        can('manage', 'all')
+        can('manage', 'all');
     }
 
 }
 
 function policyFor(user) {
 
-    let builder = new AbilityBuilder()
+    let builder = new AbilityBuilder();
 
     if (user && typeof policies[user.role] === 'function') {
-        policies[user.role](user, builder)
+        policies[user.role](user, builder);
     } else {
-        policies['guest'](user, builder)
+        policies['guest'](user, builder);
     }
-    return new Ability(builder.rules)
+
+    return new Ability(builder.rules);
 }
+
 
 module.exports = {
     policyFor

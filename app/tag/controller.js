@@ -8,14 +8,15 @@ async function store(req, res, next) {
     try {
 
         //--- cek policy ---/
-        let policy = policyFor(req.user)
+        let policy = policyFor(req.user);
 
-        if (!policy.can('create', 'Tag')) {
+        if (!policy.can('create', 'Tag')) { // <-- can create Tag
             return res.json({
                 error: 1,
-                message: 'Anda tidak memiliki akses untuk membuat Tag'
-            })
+                message: `Anda tidak memiliki akses untuk membuat tag`
+            });
         }
+
         //-----------------//
 
         // dapatkan data dari request yang dikirimkan client
